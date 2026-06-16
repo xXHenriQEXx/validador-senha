@@ -271,3 +271,12 @@ Os testes de serviço utilizam `@ParameterizedTest` com todos os exemplos do enu
 | **Testes de mutação** | Usar PIT Mutation Testing para garantir que os testes realmente detectam falhas no código, e não apenas executam sem verificar nada. |
 | **Testes de carga** | Usar ferramentas como Gatling ou k6 para validar o comportamento da API sob alta concorrência. |
 | **Cobertura mínima obrigatória** | Configurar o Maven para reprovar o build se a cobertura de testes cair abaixo de um limiar definido (ex: 80%), usando JaCoCo. |
+
+Teste validado
+<img width="959" height="546" alt="image" src="https://github.com/user-attachments/assets/88c74b39-2607-4854-a082-59c34c5625ad" />
+
+Teste invalidado
+<img width="959" height="607" alt="image" src="https://github.com/user-attachments/assets/46abdac1-cc31-4f2b-83c2-93ac2fc81b53" />
+
+
+
