@@ -278,5 +278,15 @@ Teste validado
 Teste invalidado
 <img width="959" height="607" alt="image" src="https://github.com/user-attachments/assets/46abdac1-cc31-4f2b-83c2-93ac2fc81b53" />
 
+Tratamento
+<img width="975" height="593" alt="image" src="https://github.com/user-attachments/assets/61ccb1da-9eac-49d3-aa11-e47922dceb3f" />
+
+Tratamento
+<img width="964" height="565" alt="image" src="https://github.com/user-attachments/assets/a0f03b44-9208-4ec3-a7f1-aa9bf3d54cb4" />
+
+
+
+
+
 
 
