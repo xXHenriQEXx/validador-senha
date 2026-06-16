@@ -227,3 +227,47 @@ Os testes de serviço utilizam `@ParameterizedTest` com todos os exemplos do enu
 - **Springdoc OpenAPI 1.7.0** — documentação Swagger (compatível com Spring Boot 2.x)
 - **JUnit 5** — testes unitários e de integração
 - **Maven** — gerenciamento de dependências e build
+
+---
+
+## 🚀 Melhorias Futuras
+
+### 🔐 Segurança
+
+| Melhoria | Descrição |
+|---|---|
+| **Autenticação por API Key** | Adicionar um header `X-API-Key` obrigatório nas requisições, validado por um filtro Spring Security. Solução simples para cenários de integração entre sistemas. |
+| **Autenticação JWT** | Implementar Spring Security com tokens JWT para cenários onde múltiplos clientes/usuários precisam se autenticar individualmente. |
+| **Rate Limiting** | Limitar o número de requisições por IP/token (ex: 100 req/min) para prevenir ataques de força bruta ou abuso da API. |
+| **HTTPS obrigatório** | Configurar TLS/SSL para garantir que a senha trafegue sempre criptografada, nunca em texto puro. |
+
+---
+
+### 📊 Observabilidade
+
+| Melhoria | Descrição |
+|---|---|
+| **Métricas com Datadog (ou Dynatrace/New Relic)** | Expor métricas de uso da API (requisições por segundo, taxa de senhas válidas/inválidas, latência) integrando o `micrometer-registry-datadog` ou utilizando o Datadog Java Agent para monitoramento completo de APM. |
+| **Logs estruturados** | Substituir logs textuais por logs em JSON (ex: com Logback + LogstashEncoder) para facilitar integração com ferramentas como ELK Stack. |
+| **Health Check** | Adicionar Spring Boot Actuator para expor endpoints de saúde (`/actuator/health`) e métricas (`/actuator/metrics`). |
+
+---
+
+### 🏗️ Arquitetura e Código
+
+| Melhoria | Descrição |
+|---|---|
+| **Migração para Spring Boot 3.x** | Atualizar para Java 17+ e substituir `javax.*` por `jakarta.*`, aproveitando as melhorias de performance e suporte de longo prazo. |
+| **Retorno detalhado de erros** | Em vez de apenas `{ "valida": false }`, retornar quais regras específicas a senha violou (ex: `"regras_violadas": ["sem_maiuscula", "caractere_repetido"]`). |
+| **Configuração externalizável** | Tornar o comprimento mínimo e o conjunto de caracteres especiais configuráveis via `application.properties`, sem necessidade de recompilação. |
+| **Cache** | Adicionar cache (ex: Caffeine) para senhas já validadas recentemente, reduzindo processamento repetido em cenários de alta carga. |
+
+---
+
+### 🧪 Testes
+
+| Melhoria | Descrição |
+|---|---|
+| **Testes de mutação** | Usar PIT Mutation Testing para garantir que os testes realmente detectam falhas no código, e não apenas executam sem verificar nada. |
+| **Testes de carga** | Usar ferramentas como Gatling ou k6 para validar o comportamento da API sob alta concorrência. |
+| **Cobertura mínima obrigatória** | Configurar o Maven para reprovar o build se a cobertura de testes cair abaixo de um limiar definido (ex: 80%), usando JaCoCo. |
